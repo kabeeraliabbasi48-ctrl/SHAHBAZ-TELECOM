@@ -1,19 +1,13 @@
+<!-- LOGIN -->
 <div id="loginView" class="container">
   <div class="card login">
 
     <div style="text-align:center;margin-bottom:22px">
       <div style="
-        width:64px;
-        height:64px;
-        margin:auto;
-        border-radius:16px;
+        width:64px;height:64px;margin:auto;border-radius:16px;
         background:linear-gradient(135deg,#075b86,#0873a8);
-        color:white;
-        display:grid;
-        place-items:center;
-        font-size:22px;
-        font-weight:800;
-        box-shadow:0 6px 18px #0873a833;
+        color:white;display:grid;place-items:center;
+        font-size:22px;font-weight:800;
       ">ST</div>
 
       <h2 style="margin:14px 0 4px;color:#075b86">
@@ -25,14 +19,9 @@
       </div>
 
       <div style="
-        margin-top:8px;
-        display:inline-block;
-        padding:5px 10px;
-        border-radius:20px;
-        background:#eef7fb;
-        color:#0873a8;
-        font-size:11px;
-        font-weight:700;
+        margin-top:8px;display:inline-block;padding:5px 10px;
+        border-radius:20px;background:#eef7fb;color:#0873a8;
+        font-size:11px;font-weight:700;
       ">
         MANAGEMENT PORTAL
       </div>
@@ -43,92 +32,23 @@
       This is an independent management tool and is not an official Telenor website.
     </div>
 
-    <div id="step1">
+    <label>Username</label>
+    <input
+      id="username"
+      autocomplete="username"
+      placeholder="Enter username"
+    >
 
-      <label>Username</label>
-      <input
-        id="username"
-        autocomplete="username"
-        placeholder="Enter username"
-      >
+    <label>Password</label>
+    <input
+      id="password"
+      type="password"
+      autocomplete="current-password"
+      placeholder="Enter password"
+    >
 
-      <label>Password</label>
-      <input
-        id="password"
-        type="password"
-        autocomplete="current-password"
-        placeholder="Enter password"
-      >
-
-      <label>Registered Email</label>
-      <input
-        id="otpEmail"
-        value="Kabeeraliabbasi48@gmail.com"
-        type="email"
-        autocomplete="email"
-      >
-
-      <label>Registered Mobile Number</label>
-      <input
-        id="otpNumber"
-        value="03450929693"
-        type="tel"
-        autocomplete="tel"
-        inputmode="tel"
-      >
-
-      <div class="actions">
-        <button
-          onclick="requestOtp()"
-          style="width:100%;padding:12px"
-        >
-          Send Email OTP
-        </button>
-      </div>
-
-    </div>
-
-    <div id="step2" class="hidden">
-
-      <label>OTP</label>
-
-      <input
-        id="otpInput"
-        maxlength="6"
-        inputmode="numeric"
-        placeholder="Enter 6-digit OTP"
-      >
-
-      <div class="actions">
-
-        <button
-          onclick="verifyOtp()"
-          style="flex:1"
-        >
-          Verify & Login
-        </button>
-
-        <button
-          class="secondary"
-          onclick="requestOtp()"
-        >
-          Resend OTP
-        </button>
-
-      </div>
-
-      <div class="small" style="margin-top:10px">
-        Demo mode: the OTP is generated in this browser.
-        Real email/SMS delivery requires an email service/server.
-      </div>
-
-    </div>
-
-    <div
-      id="loginMsg"
-      class="small"
-      style="margin-top:14px;text-align:center"
-    ></div>
-
-  </div>
-</div>
+    <div class="actions">
+      <button onclick="login()" style="width:100%;padding:12px">
+        Login
+      </button>
+    </div>      
