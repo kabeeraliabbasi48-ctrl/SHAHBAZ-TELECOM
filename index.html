@@ -1,54 +1,1849 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shahbaz Telecom – Telenor Franchise Sehwan</title>
+
+<style>
+*{box-sizing:border-box}
+:root{
+ --primary:#0873a8;
+ --dark:#075b86;
+ --accent:#f5a20a;
+ --bg:#f4f7fa;
+ --text:#253746;
+ --muted:#6d7d88;
+}
+body{
+ margin:0;
+ font-family:Arial,Helvetica,sans-serif;
+ background:var(--bg);
+ color:var(--text);
+}
+.container{max-width:1120px;margin:18px auto;padding:0 14px}
+
+.siteHeader{
+ background:linear-gradient(135deg,var(--dark),var(--primary));
+ color:#fff;
+ border-bottom:4px solid var(--accent);
+ box-shadow:0 3px 14px #0002;
+}
+.headerInner{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:16px;
+ padding-top:14px;
+ padding-bottom:14px;
+}
+.brandBlock{display:flex;align-items:center;gap:12px}
+.brandMark{
+ width:44px;height:44px;border-radius:12px;
+ background:#ffffff20;
+ border:1px solid #ffffff40;
+ display:grid;place-items:center;
+ font-weight:800;
+}
+.brand{font-weight:800;font-size:19px}
+.sub{font-size:12px;opacity:.9;margin-top:3px}
+.headerBadge{
+ font-size:12px;font-weight:700;
+ padding:7px 12px;
+ border:1px solid #ffffff40;
+ border-radius:20px;
+ background:#ffffff15;
+}
+
+.card{
+ background:#fff;
+ border:1px solid #d9e3ea;
+ border-radius:12px;
+ box-shadow:0 4px 18px #17324d12;
+ padding:20px;
+ margin-bottom:16px;
+}
+
+.login{
+ max-width:460px;
+ margin:55px auto;
+}
+
+.login h2{
+ color:var(--dark);
+}
+
+.notice{
+ font-size:12px;
+ color:#7b4f00;
+ background:#fff6d9;
+ border:1px solid #ead28a;
+ padding:10px;
+ border-radius:8px;
+ margin-bottom:18px;
+}
+
+label{
+ display:block;
+ font-size:13px;
+ font-weight:700;
+ margin:12px 0 6px;
+}
+
+input,select,textarea{
+ width:100%;
+ padding:11px 12px;
+ border:1px solid #aebdca;
+ border-radius:8px;
+ font-size:14px;
+ background:#fff;
+ outline:none;
+}
+
+input:focus,select:focus,textarea:focus{
+ border-color:var(--primary);
+ box-shadow:0 0 0 3px #0873a815;
+}
+
+button{
+ border:0;
+ border-radius:8px;
+ padding:10px 14px;
+ background:var(--primary);
+ color:#fff;
+ cursor:pointer;
+ font-weight:700;
+ transition:.15s;
+}
+
+button:hover{
+ transform:translateY(-1px);
+ filter:brightness(.97);
+}
+
+button.secondary{background:#687b8a}
+button.danger{background:#a52b2b}
+button.gold{background:#c18a00}
+
+.actions{
+ display:flex;
+ gap:9px;
+ flex-wrap:wrap;
+ margin-top:14px;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:12px;
+}
+
+.stat{
+ padding:18px;
+ background:#fff;
+ border:1px solid #dce6ed;
+ border-radius:12px;
+ box-shadow:0 3px 12px #17324d0d;
+}
+
+.stat strong{
+ display:block;
+ font-size:30px;
+ margin-top:7px;
+ color:var(--primary);
+}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+ font-size:13px;
+ background:#fff;
+}
+
+th,td{
+ padding:10px;
+ border:1px solid #d4dee6;
+ text-align:left;
+}
+
+th{
+ background:#eaf1f6;
+ color:#38586a;
+}
+
+.scroll{overflow:auto}
+.hidden{display:none!important}
+.small{font-size:12px;color:var(--muted)}
+
+.topnav{
+ background:#fff;
+ border-bottom:1px solid #dce5eb;
+ box-shadow:0 2px 8px #17324d0a;
+}
+
+.navinner{
+ max-width:1120px;
+ margin:auto;
+ display:flex;
+ gap:2px;
+ align-items:center;
+ flex-wrap:wrap;
+ padding:0 14px;
+}
+
+.navinner button{
+ background:#fff;
+ color:#28556e;
+ border-radius:0;
+ padding:12px 15px;
+}
+
+.navinner button:hover{
+ background:#eef7fb;
+ color:var(--dark);
+}
+
+.navinner .signout{
+ margin-left:auto;
+ background:var(--accent);
+ color:#fff;
+ border-radius:20px;
+ padding:8px 20px;
+}
+
+.subnav{
+ background:#fffde8;
+ border-bottom:1px solid #eadf9b;
+ padding:5px;
+ display:flex;
+ gap:4px;
+ justify-content:center;
+ flex-wrap:wrap;
+}
+
+.subnav button{
+ background:var(--accent);
+ color:#fff;
+ border-radius:6px;
+}
+
+.pageTitle{
+ font-size:24px;
+ font-weight:bold;
+ color:#29485b;
+ border-bottom:1px solid #ccc;
+ padding:18px 0 10px;
+ margin-bottom:16px;
+}
+
+.welcome{
+ background:linear-gradient(135deg,#fff,#edf8fc);
+ border:1px solid #d7e6ef;
+ border-radius:12px;
+ padding:22px;
+ margin-bottom:16px;
+}
+
+.welcome h2{
+ margin:0;
+ color:var(--primary);
+}
+
+.welcome p{
+ margin-bottom:0;
+}
+
+.folderGrid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:16px;
+ padding:10px 0;
+}
+
+.folderGrid button{
+ background:#fff;
+ border:1px solid #e0e8ee;
+ text-align:left;
+ color:#075db0;
+ font-size:28px;
+ display:flex;
+ align-items:center;
+ gap:12px;
+ padding:18px;
+ border-radius:12px;
+ box-shadow:0 2px 10px #17324d0a;
+}
+
+.folderGrid span{
+ font-size:14px;
+ font-weight:bold;
+}
+
+.folderGrid button:hover{
+ background:#f7fcff;
+ border-color:#b8d7e7;
+}
+
+@media(max-width:700px){
+ .folderGrid{grid-template-columns:1fr 1fr}
+ .headerBadge{display:none}
+ .navinner{overflow:auto}
+ .navinner .signout{margin-left:0}
+}
+
+@media(max-width:500px){
+ .folderGrid{grid-template-columns:1fr}
+ .login{margin:30px auto}
+ .brand{font-size:17px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="siteHeader">
+<div class="container headerInner">
+
+<div class="brandBlock">
+<div class="brandMark">ST</div>
+
+<div>
+<div class="brand">Shahbaz Telecom</div>
+<div class="sub">Telenor Franchise · Sehwan</div>
+</div>
+</div>
+
+<div class="headerBadge">
+Management Portal
+</div>
+
+</div>
+</header>
+
+
 <!-- LOGIN -->
+
 <div id="loginView" class="container">
-  <div class="card login">
 
-    <div style="text-align:center;margin-bottom:22px">
-      <div style="
-        width:64px;height:64px;margin:auto;border-radius:16px;
-        background:linear-gradient(135deg,#075b86,#0873a8);
-        color:white;display:grid;place-items:center;
-        font-size:22px;font-weight:800;
-      ">ST</div>
+<div class="card login">
 
-      <h2 style="margin:14px 0 4px;color:#075b86">
-        Shahbaz Telecom
-      </h2>
+<div style="text-align:center;margin-bottom:22px">
 
-      <div style="color:#6d7d88;font-size:13px">
-        Telenor Franchise · Sehwan
-      </div>
+<div style="
+width:64px;
+height:64px;
+margin:auto;
+border-radius:16px;
+background:linear-gradient(135deg,#075b86,#0873a8);
+color:white;
+display:grid;
+place-items:center;
+font-size:22px;
+font-weight:800;
+box-shadow:0 6px 18px #0873a833;
+">
+ST
+</div>
 
-      <div style="
-        margin-top:8px;display:inline-block;padding:5px 10px;
-        border-radius:20px;background:#eef7fb;color:#0873a8;
-        font-size:11px;font-weight:700;
-      ">
-        MANAGEMENT PORTAL
-      </div>
-    </div>
+<h2 style="margin:14px 0 4px">
+Shahbaz Telecom
+</h2>
 
-    <div class="notice">
-      Private employee & salary management portal.
-      This is an independent management tool and is not an official Telenor website.
-    </div>
+<div style="color:#6d7d88;font-size:13px">
+Telenor Franchise · Sehwan
+</div>
 
-    <label>Username</label>
-    <input
-      id="username"
-      autocomplete="username"
-      placeholder="Enter username"
-    >
+<div style="
+margin-top:8px;
+display:inline-block;
+padding:5px 10px;
+border-radius:20px;
+background:#eef7fb;
+color:#0873a8;
+font-size:11px;
+font-weight:700;
+">
+MANAGEMENT PORTAL
+</div>
 
-    <label>Password</label>
-    <input
-      id="password"
-      type="password"
-      autocomplete="current-password"
-      placeholder="Enter password"
-    >
+</div>
 
-    <div class="actions">
-      <button onclick="login()" style="width:100%;padding:12px">
-        Login
-      </button>
-    </div>      
+<div class="notice">
+Private employee & salary management portal.
+This is an independent management tool and is not an official Telenor website.
+</div>
+
+<label>Username</label>
+
+<input
+id="username"
+autocomplete="username"
+placeholder="Enter username"
+>
+
+<label>Password</label>
+
+<input
+id="password"
+type="password"
+autocomplete="current-password"
+placeholder="Enter password"
+>
+
+<div class="actions">
+
+<button
+onclick="login()"
+style="width:100%;padding:12px"
+>
+LOGIN
+</button>
+
+</div>
+
+<div
+id="loginMsg"
+class="small"
+style="margin-top:14px;text-align:center"
+></div>
+
+</div>
+</div>
+
+
+<!-- APPLICATION -->
+
+<div id="app" class="hidden">
+
+<div class="topnav">
+
+<div class="navinner">
+
+<button onclick="page('home')">
+Home
+</button>
+
+<button onclick="page('inventory')">
+Inventory
+</button>
+
+<button onclick="page('sales')">
+Sales Reports
+</button>
+
+<button onclick="page('ledgers')">
+Ledgers
+</button>
+
+<button onclick="page('employees')">
+Employees
+</button>
+
+<button class="signout" onclick="logout()">
+SIGN OUT
+</button>
+
+</div>
+</div>
+
+
+<div class="subnav">
+
+<button onclick="page('stockReceiving')">
+Stock Receiving
+</button>
+
+<button onclick="page('stockTransfer')">
+Stock Transfer Invoice
+</button>
+
+<button onclick="page('salesInvoice')">
+Sales Invoice
+</button>
+
+</div>
+
+
+<div class="container">
+
+<!-- HOME -->
+
+<section id="homePage" class="page">
+
+<div class="pageTitle">
+Home Dashboard
+</div>
+
+<div class="welcome">
+
+<h2>
+Shahbaz Telecom, Telenor Franchise, Sehwan
+</h2>
+
+<p>
+Franchise Management System
+</p>
+
+</div>
+
+<div class="actions">
+
+<button onclick="page('employees')">
+➕ Add / Manage Employees
+</button>
+
+<button onclick="page('salary')">
+💰 Salary & Salary Slips
+</button>
+
+</div>
+
+
+<div class="grid">
+
+<div class="stat">
+<b>Total Employees</b>
+<strong id="count">0</strong>
+</div>
+
+<div class="stat">
+<b>Total Products</b>
+<strong id="productCount">0</strong>
+</div>
+
+<div class="stat">
+<b>Sales Invoices</b>
+<strong id="invoiceCount">0</strong>
+</div>
+
+<div class="stat">
+<b>Salary Records</b>
+<strong id="salaryCount">0</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INVENTORY -->
+
+<section id="inventoryPage" class="page hidden">
+
+<div class="pageTitle">
+Inventory
+</div>
+
+<div class="folderGrid">
+
+<button onclick="page('stockReport')">
+📁 <span>Stock Report</span>
+</button>
+
+<button onclick="page('overallStock')">
+📁 <span>Overall Stock Report</span>
+</button>
+
+<button onclick="page('stockLedger')">
+📁 <span>Stock in Hand Product Ledger</span>
+</button>
+
+<button onclick="page('productLedger')">
+📁 <span>RSO Product Ledger</span>
+</button>
+
+<button onclick="page('stockSummary')">
+📁 <span>Stock Summary</span>
+</button>
+
+<button onclick="page('rsoIssue')">
+📁 <span>RSO Requisition vs Issuance Summary</span>
+</button>
+
+<button onclick="page('employeeLiability')">
+📁 <span>Employee Liability Report</span>
+</button>
+
+<button onclick="page('productIssue')">
+📁 <span>Product Issuance Summary</span>
+</button>
+
+<button onclick="page('easyload')">
+📁 <span>Easyload Purchase Commission Report</span>
+</button>
+
+<button onclick="page('numberInvestigation')">
+📁 <span>Number Investigation</span>
+</button>
+
+<button onclick="page('rsoActivity')">
+📁 <span>RSO Stock Activity</span>
+</button>
+
+<button onclick="page('rsoLiability')">
+📁 <span>Summary of RSOs Complete Liability</span>
+</button>
+
+<button onclick="page('productDetail')">
+📁 <span>Product Stock Detail</span>
+</button>
+
+<button onclick="page('bvsIssue')">
+📁 <span>BVS Devices Issuance Report</span>
+</button>
+
+<button onclick="page('bvsReturn')">
+📁 <span>BVS Devices Return Report</span>
+</button>
+
+</div>
+</section>
+
+
+<!-- EMPLOYEES -->
+
+<section id="employeesPage" class="page hidden">
+
+<div class="pageTitle">
+Employee Management
+</div>
+
+<div class="card">
+
+<h3>
+Add / Edit Employee
+</h3>
+
+<input type="hidden" id="editId">
+
+<div class="grid">
+
+<div>
+<label>Employee No</label>
+<input id="empNo">
+</div>
+
+<div>
+<label>Employee Name</label>
+<input id="empName">
+</div>
+
+<div>
+<label>Designation</label>
+<input id="designation">
+</div>
+
+<div>
+<label>Department</label>
+<input id="department">
+</div>
+
+<div>
+<label>CNIC</label>
+<input id="cnic">
+</div>
+
+<div>
+<label>Basic Salary</label>
+<input id="basic" type="number">
+</div>
+
+<div>
+<label>Allowances</label>
+<input id="allowances" type="number">
+</div>
+
+<div>
+<label>Deductions</label>
+<input id="deductions" type="number">
+</div>
+
+</div>
+
+<div class="actions">
+
+<button onclick="saveEmployee()">
+Save Employee
+</button>
+
+<button class="secondary" onclick="clearForm()">
+Clear
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Employee List
+</h3>
+
+<input
+id="search"
+placeholder="Search employee..."
+oninput="renderEmployees()"
+>
+
+<div class="scroll">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Employee No</th>
+<th>Name</th>
+<th>Designation</th>
+<th>Department</th>
+<th>Net Salary</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="employeeRows">
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SALARY -->
+
+<section id="salaryPage" class="page hidden">
+
+<div class="pageTitle">
+Salary & Salary Slip
+</div>
+
+<div class="card">
+
+<h3>
+Monthly Salary Record
+</h3>
+
+<div class="grid">
+
+<div>
+<label>Employee</label>
+<select id="salaryEmp"></select>
+</div>
+
+<div>
+<label>Month</label>
+<input id="salaryMonth" type="month">
+</div>
+
+<div>
+<label>Basic Salary</label>
+<input id="salaryBasic" type="number">
+</div>
+
+<div>
+<label>Allowances</label>
+<input id="salaryAllowances" type="number">
+</div>
+
+<div>
+<label>Deductions</label>
+<input id="salaryDeductions" type="number">
+</div>
+
+</div>
+
+<div class="actions">
+
+<button onclick="saveSalary()">
+Save Salary Record
+</button>
+
+<button class="gold" onclick="printSlip()">
+Print Selected Slip
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Saved Salary Records
+</h3>
+
+<div class="scroll">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Month</th>
+<th>Employee</th>
+<th>Basic</th>
+<th>Allowances</th>
+<th>Deductions</th>
+<th>Net</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="salaryRows">
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REPORT -->
+
+<section id="reportPage" class="page hidden">
+
+<div class="pageTitle" id="reportTitle">
+Report
+</div>
+
+<div class="card">
+
+<div class="grid">
+
+<div>
+<label>From Date</label>
+<input id="fromDate" type="date">
+</div>
+
+<div>
+<label>To Date</label>
+<input id="toDate" type="date">
+</div>
+
+<div>
+<label>Employee / RSO</label>
+<input id="reportPerson">
+</div>
+
+<div>
+<label>Product</label>
+<input id="reportProduct">
+</div>
+
+</div>
+
+<div class="actions">
+
+<button onclick="generateReport()">
+Search Report
+</button>
+
+<button class="secondary" onclick="window.print()">
+Print
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="scroll">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Date</th>
+<th>Reference</th>
+<th>Employee/RSO</th>
+<th>Product</th>
+<th>Quantity</th>
+<th>Amount</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody id="reportRows">
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ENTRY -->
+
+<section id="entryPage" class="page hidden">
+
+<div class="pageTitle" id="entryTitle">
+Transaction
+</div>
+
+<div class="card">
+
+<div class="grid">
+
+<div>
+<label>Date</label>
+<input id="entryDate" type="date">
+</div>
+
+<div>
+<label>Reference / Invoice No</label>
+<input id="entryRef">
+</div>
+
+<div>
+<label>Employee / RSO</label>
+<input id="entryPerson">
+</div>
+
+<div>
+<label>Product</label>
+<input id="entryProduct">
+</div>
+
+<div>
+<label>Quantity</label>
+<input id="entryQty" type="number">
+</div>
+
+<div>
+<label>Amount</label>
+<input id="entryAmount" type="number">
+</div>
+
+<div>
+<label>Status</label>
+
+<select id="entryStatus">
+
+<option>Completed</option>
+<option>Pending</option>
+<option>Returned</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="actions">
+
+<button onclick="saveEntry()">
+Save Transaction
+</button>
+
+<button
+class="secondary"
+onclick="page('inventory')"
+>
+Back
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INVOICE -->
+
+<section id="invoicePage" class="page hidden">
+
+<div class="pageTitle">
+Sales Invoice
+</div>
+
+<div class="card">
+
+<div class="grid">
+
+<div>
+<label>Invoice No</label>
+<input id="invNo">
+</div>
+
+<div>
+<label>Date</label>
+<input id="invDate" type="date">
+</div>
+
+<div>
+<label>Customer</label>
+<input id="invCustomer">
+</div>
+
+<div>
+<label>Product</label>
+<input id="invProduct">
+</div>
+
+<div>
+<label>Quantity</label>
+<input id="invQty" type="number">
+</div>
+
+<div>
+<label>Unit Price</label>
+<input id="invPrice" type="number">
+</div>
+
+</div>
+
+<div class="actions">
+
+<button onclick="saveInvoice()">
+Save Invoice
+</button>
+
+<button class="gold" onclick="printInvoice()">
+Print Invoice
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Saved Invoices
+</h3>
+
+<div class="scroll">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Invoice</th>
+<th>Date</th>
+<th>Customer</th>
+<th>Product</th>
+<th>Qty</th>
+<th>Total</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="invoiceRows">
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+</div>
+
+
+<script>
+
+const USER="KABEER ALI ABBASI";
+const PASS="KABEER@48";
+
+let employees=JSON.parse(localStorage.getItem("st_employees")||"[]");
+let salaries=JSON.parse(localStorage.getItem("st_salaries")||"[]");
+let transactions=JSON.parse(localStorage.getItem("st_transactions")||"[]");
+let invoices=JSON.parse(localStorage.getItem("st_invoices")||"[]");
+
+let selectedSalaryId=null;
+let selectedInvoiceId=null;
+let currentPage="home";
+
+
+function login(){
+
+const u=document.getElementById("username").value.trim();
+const p=document.getElementById("password").value;
+
+if(u!==USER || p!==PASS){
+
+document.getElementById("loginMsg").textContent=
+"Username or password is incorrect.";
+
+return;
+}
+
+sessionStorage.setItem("st_login","1");
+
+showApp();
+
+}
+
+
+function showApp(){
+
+document.getElementById("loginView").classList.add("hidden");
+
+document.getElementById("app").classList.remove("hidden");
+
+renderAll();
+
+page("home");
+
+}
+
+
+function logout(){
+
+sessionStorage.removeItem("st_login");
+
+location.reload();
+
+}
+
+
+if(sessionStorage.getItem("st_login")==="1"){
+
+showApp();
+
+}
+
+
+function page(p){
+
+currentPage=p;
+
+document.querySelectorAll(".page")
+.forEach(x=>x.classList.add("hidden"));
+
+let map={
+
+home:"homePage",
+inventory:"inventoryPage",
+employees:"employeesPage",
+salary:"salaryPage",
+
+sales:"reportPage",
+ledgers:"reportPage",
+
+stockReport:"reportPage",
+overallStock:"reportPage",
+stockLedger:"reportPage",
+productLedger:"reportPage",
+stockSummary:"reportPage",
+rsoIssue:"reportPage",
+employeeLiability:"reportPage",
+productIssue:"reportPage",
+easyload:"reportPage",
+numberInvestigation:"reportPage",
+rsoActivity:"reportPage",
+rsoLiability:"reportPage",
+productDetail:"reportPage",
+bvsIssue:"reportPage",
+bvsReturn:"reportPage",
+
+stockReceiving:"entryPage",
+stockTransfer:"entryPage",
+
+salesInvoice:"invoicePage"
+
+};
+
+let id=map[p]||"homePage";
+
+document.getElementById(id).classList.remove("hidden");
+
+if(id==="reportPage"){
+
+document.getElementById("reportTitle").textContent=label(p);
+
+generateReport();
+
+}
+
+if(id==="entryPage"){
+
+document.getElementById("entryTitle").textContent=label(p);
+
+document.getElementById("entryDate").value=
+new Date().toISOString().slice(0,10);
+
+}
+
+if(id==="invoicePage"){
+
+renderInvoices();
+
+}
+
+if(id==="employeesPage"){
+
+renderEmployees();
+
+}
+
+if(id==="salaryPage"){
+
+renderSelect();
+
+renderSalary();
+
+}
+
+}
+
+
+function label(p){
+
+return({
+
+stockReport:"Stock Report",
+overallStock:"Overall Stock Report",
+stockLedger:"Stock in Hand Product Ledger",
+productLedger:"RSO Product Ledger",
+stockSummary:"Stock Summary",
+rsoIssue:"RSO Requisition vs Issuance Summary",
+employeeLiability:"Employee Liability Report",
+productIssue:"Product Issuance Summary",
+easyload:"Easyload Purchase Commission Report",
+numberInvestigation:"Number Investigation",
+rsoActivity:"RSO Stock Activity",
+rsoLiability:"Summary of RSOs Complete Liability",
+productDetail:"Product Stock Detail",
+bvsIssue:"BVS Devices Issuance Report",
+bvsReturn:"BVS Devices Return Report",
+sales:"Sales Reports",
+ledgers:"Ledgers"
+
+})[p]||"Report";
+
+}
+
+
+function saveData(){
+
+localStorage.setItem(
+"st_employees",
+JSON.stringify(employees)
+);
+
+localStorage.setItem(
+"st_salaries",
+JSON.stringify(salaries)
+);
+
+localStorage.setItem(
+"st_transactions",
+JSON.stringify(transactions)
+);
+
+localStorage.setItem(
+"st_invoices",
+JSON.stringify(invoices)
+);
+
+}
+
+
+function money(n){
+
+return Number(n||0).toLocaleString();
+
+}
+
+
+function esc(s){
+
+return String(s??"")
+.replace(/[&<>"']/g,m=>({
+
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#39;"
+
+}[m]));
+
+}
+
+
+function saveEmployee(){
+
+let no=document.getElementById("empNo").value.trim();
+
+let name=document.getElementById("empName").value.trim();
+
+if(!no||!name){
+
+return alert("Employee No and Name are required.");
+
+}
+
+let o={
+
+id:document.getElementById("editId").value||
+Date.now()+"",
+
+no:no,
+
+name:name,
+
+designation:document.getElementById("designation").value,
+
+department:document.getElementById("department").value,
+
+cnic:document.getElementById("cnic").value,
+
+basic:+document.getElementById("basic").value||0,
+
+allowances:+document.getElementById("allowances").value||0,
+
+deductions:+document.getElementById("deductions").value||0
+
+};
+
+let i=employees.findIndex(x=>x.id===o.id);
+
+if(i<0){
+
+employees.push(o);
+
+}else{
+
+employees[i]=o;
+
+}
+
+saveData();
+
+clearForm();
+
+renderAll();
+
+}
+
+
+function clearForm(){
+
+[
+"editId",
+"empNo",
+"empName",
+"designation",
+"department",
+"cnic",
+"basic",
+"allowances",
+"deductions"
+
+].forEach(x=>{
+
+document.getElementById(x).value="";
+
+});
+
+}
+
+
+function editEmployee(id){
+
+let e=employees.find(x=>x.id===id);
+
+if(!e)return;
+
+document.getElementById("editId").value=e.id;
+
+document.getElementById("empNo").value=e.no;
+
+document.getElementById("empName").value=e.name;
+
+document.getElementById("designation").value=e.designation;
+
+document.getElementById("department").value=e.department;
+
+document.getElementById("cnic").value=e.cnic;
+
+document.getElementById("basic").value=e.basic;
+
+document.getElementById("allowances").value=e.allowances;
+
+document.getElementById("deductions").value=e.deductions;
+
+page("employees");
+
+}
+
+
+function deleteEmployee(id){
+
+if(confirm("Delete employee?")){
+
+employees=employees.filter(x=>x.id!==id);
+
+saveData();
+
+renderAll();
+
+}
+
+}
+
+
+function renderEmployees(){
+
+let q=(document.getElementById("search")?.value||"")
+.toLowerCase();
+
+let a=employees.filter(e=>
+(e.no+" "+e.name+" "+e.designation+" "+e.department)
+.toLowerCase()
+.includes(q)
+);
+
+document.getElementById("employeeRows").innerHTML=
+
+a.map(e=>`
+
+<tr>
+
+<td>${esc(e.no)}</td>
+
+<td>${esc(e.name)}</td>
+
+<td>${esc(e.designation)}</td>
+
+<td>${esc(e.department)}</td>
+
+<td>${money(e.basic+e.allowances-e.deductions)}</td>
+
+<td>
+
+<button onclick="editEmployee('${e.id}')">
+Edit
+</button>
+
+<button
+class="danger"
+onclick="deleteEmployee('${e.id}')"
+>
+Delete
+</button>
+
+</td>
+
+</tr>
+
+`).join("")
+
+||`<tr>
+<td colspan="6">No employees added.</td>
+</tr>`;
+
+}
+
+
+function renderSelect(){
+
+document.getElementById("salaryEmp").innerHTML=
+
+employees.map(e=>`
+
+<option value="${e.id}">
+${esc(e.no)} — ${esc(e.name)}
+</option>
+
+`).join("");
+
+}
+
+
+function saveSalary(){
+
+let emp=document.getElementById("salaryEmp").value;
+
+if(!emp){
+
+return alert("Add an employee first.");
+
+}
+
+let r={
+
+id:Date.now()+"",
+
+empId:emp,
+
+month:
+document.getElementById("salaryMonth").value||
+new Date().toISOString().slice(0,7),
+
+basic:+document.getElementById("salaryBasic").value||0,
+
+allowances:+document.getElementById("salaryAllowances").value||0,
+
+deductions:+document.getElementById("salaryDeductions").value||0
+
+};
+
+salaries.push(r);
+
+selectedSalaryId=r.id;
+
+saveData();
+
+renderAll();
+
+}
+
+
+function renderSalary(){
+
+document.getElementById("salaryRows").innerHTML=
+
+salaries.slice().reverse().map(s=>{
+
+let e=employees.find(x=>x.id===s.empId)||{};
+
+return `
+
+<tr>
+
+<td>${s.month}</td>
+
+<td>${esc(e.name||"Unknown")}</td>
+
+<td>${money(s.basic)}</td>
+
+<td>${money(s.allowances)}</td>
+
+<td>${money(s.deductions)}</td>
+
+<td>${money(s.basic+s.allowances-s.deductions)}</td>
+
+<td>
+
+<button onclick="selectedSalaryId='${s.id}'">
+Select
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+}).join("")
+
+||`<tr>
+<td colspan="7">No records.</td>
+</tr>`;
+
+}
+
+
+function saveEntry(){
+
+transactions.push({
+
+id:Date.now()+"",
+
+date:document.getElementById("entryDate").value,
+
+ref:document.getElementById("entryRef").value,
+
+person:document.getElementById("entryPerson").value,
+
+product:document.getElementById("entryProduct").value,
+
+qty:+document.getElementById("entryQty").value||0,
+
+amount:+document.getElementById("entryAmount").value||0,
+
+status:document.getElementById("entryStatus").value,
+
+type:currentPage
+
+});
+
+saveData();
+
+alert("Transaction saved.");
+
+page("inventory");
+
+}
+
+
+function generateReport(){
+
+let q=(document.getElementById("reportPerson")?.value||"")
+.toLowerCase();
+
+let pr=(document.getElementById("reportProduct")?.value||"")
+.toLowerCase();
+
+let a=transactions.filter(t=>
+(!q||t.person.toLowerCase().includes(q)) &&
+(!pr||t.product.toLowerCase().includes(pr))
+);
+
+document.getElementById("reportRows").innerHTML=
+
+a.map(t=>`
+
+<tr>
+
+<td>${t.date}</td>
+<td>${esc(t.ref)}</td>
+<td>${esc(t.person)}</td>
+<td>${esc(t.product)}</td>
+<td>${t.qty}</td>
+<td>${money(t.amount)}</td>
+<td>${esc(t.status)}</td>
+
+</tr>
+
+`).join("")
+
+||`<tr>
+<td colspan="7">No matching records.</td>
+</tr>`;
+
+}
+
+
+function saveInvoice(){
+
+let r={
+
+id:Date.now()+"",
+
+no:document.getElementById("invNo").value,
+
+date:
+document.getElementById("invDate").value||
+new Date().toISOString().slice(0,10),
+
+customer:document.getElementById("invCustomer").value,
+
+product:document.getElementById("invProduct").value,
+
+qty:+document.getElementById("invQty").value||0,
+
+price:+document.getElementById("invPrice").value||0
+
+};
+
+invoices.push(r);
+
+selectedInvoiceId=r.id;
+
+saveData();
+
+renderAll();
+
+}
+
+
+function renderInvoices(){
+
+document.getElementById("invoiceRows").innerHTML=
+
+invoices.slice().reverse().map(r=>`
+
+<tr>
+
+<td>${esc(r.no)}</td>
+
+<td>${r.date}</td>
+
+<td>${esc(r.customer)}</td>
+
+<td>${esc(r.product)}</td>
+
+<td>${r.qty}</td>
+
+<td>${money(r.qty*r.price)}</td>
+
+<td>
+
+<button onclick="selectedInvoiceId='${r.id}'">
+Select
+</button>
+
+</td>
+
+</tr>
+
+`).join("")
+
+||`<tr>
+<td colspan="7">No invoices.</td>
+</tr>`;
+
+}
+
+
+function printSlip(){
+
+let s=salaries.find(x=>x.id===selectedSalaryId)||salaries.at(-1);
+
+if(!s){
+
+return alert("Save a salary record first.");
+
+}
+
+let e=employees.find(x=>x.id===s.empId)||{};
+
+let w=open("","_blank");
+
+w.document.write(`
+
+<h2>Shahbaz Telecom – Telenor Franchise Sehwan</h2>
+
+<h3>Salary Slip</h3>
+
+<p>Employee: ${esc(e.name)}</p>
+
+<p>Employee No: ${esc(e.no)}</p>
+
+<p>Month: ${s.month}</p>
+
+<table border="1" cellpadding="8">
+
+<tr>
+<td>Basic</td>
+<td>${money(s.basic)}</td>
+</tr>
+
+<tr>
+<td>Allowances</td>
+<td>${money(s.allowances)}</td>
+</tr>
+
+<tr>
+<td>Deductions</td>
+<td>${money(s.deductions)}</td>
+</tr>
+
+<tr>
+<th>Net</th>
+<th>${money(s.basic+s.allowances-s.deductions)}</th>
+</tr>
+
+</table>
+
+<p>Private management record.</p>
+
+`);
+
+w.print();
+
+}
+
+
+function printInvoice(){
+
+let r=invoices.find(x=>x.id===selectedInvoiceId)||invoices.at(-1);
+
+if(!r){
+
+return alert("Save an invoice first.");
+
+}
+
+let w=open("","_blank");
+
+w.document.write(`
+
+<h2>Shahbaz Telecom – Telenor Franchise Sehwan</h2>
+
+<h3>Sales Invoice</h3>
+
+<p>
+Invoice: ${esc(r.no)} |
+Date: ${r.date}
+</p>
+
+<p>
+Customer: ${esc(r.customer)}
+</p>
+
+<table border="1" cellpadding="8">
+
+<tr>
+
+<th>Product</th>
+<th>Qty</th>
+<th>Unit Price</th>
+<th>Total</th>
+
+</tr>
+
+<tr>
+
+<td>${esc(r.product)}</td>
+<td>${r.qty}</td>
+<td>${money(r.price)}</td>
+<td>${money(r.qty*r.price)}</td>
+
+</tr>
+
+</table>
+
+`);
+
+w.print();
+
+}
+
+
+function renderAll(){
+
+document.getElementById("count").textContent=employees.length;
+
+document.getElementById("productCount").textContent=
+transactions.length;
+
+document.getElementById("invoiceCount").textContent=
+invoices.length;
+
+document.getElementById("salaryCount").textContent=
+salaries.length;
+
+renderEmployees();
+renderSelect();
+renderSalary();
+renderInvoices();
+
+}
+
+</script>
+
+</body>
+</html>
